@@ -15,6 +15,16 @@ class Solution02_2 {
     }
 }
 
+class Solution02_2$2 {
+    public int[] solution(String myString) {
+        int[] answer = Arrays.stream(myString.split("x", -1))
+                .mapToInt(String::length)
+                .toArray();
+
+        return answer;
+    }
+}
+
 /**
  * codingtest2.PrgmTest02_2
  * 2-2. 기초 문제 - X 사이의 개수
@@ -33,5 +43,10 @@ public class PrgmTest02_2 {
         
         System.out.println(Arrays.toString(new Solution02_2().solution(testStr1)));
         System.out.println(Arrays.toString(new Solution02_2().solution(testStr2)));
+
+        System.out.println("=".repeat(50));
+
+        System.out.println(Arrays.toString(new Solution02_2$2().solution(testStr1)));
+        System.out.println(Arrays.toString(new Solution02_2$2().solution(testStr2)));
     }
 }

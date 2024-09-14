@@ -48,6 +48,30 @@ class Solution04_2 {
 //            }
 //        }
 
+class Solution04_2$2 {
+    public int[] solution(int[] arr, int k) {
+        int[] answer = Arrays.stream(arr)
+                .distinct()
+                .limit(k)
+                .toArray();
+
+        if (answer.length < k) {
+            int[] temp = new int[k - answer.length];
+            Arrays.fill(temp, -1);
+            answer = Arrays.copyOf(answer, k);
+            System.arraycopy(temp, 0,
+                    answer, answer.length - temp.length, temp.length);
+        }
+
+        // IntStream.concat(
+        //      Arrays.stream(arr).distinct(),
+        //      IntStream.range(0, k).map(i -> -1))
+        //      .limit(k).toArray();
+
+        return answer;
+    }
+}
+
 /**
  * codingtest4.PrgmTest04_2
  * 4-1. 기초 문제 - 배열의 원소만큼 추가하기
@@ -72,5 +96,10 @@ public class PrgmTest04_2 {
 
         System.out.println(Arrays.toString(new Solution04_2().solution(testArr1, k1)));
         System.out.println(Arrays.toString(new Solution04_2().solution(testArr2, k2)));
+
+        System.out.println("=".repeat(50));
+
+        System.out.println(Arrays.toString(new Solution04_2$2().solution(testArr1, k1)));
+        System.out.println(Arrays.toString(new Solution04_2$2().solution(testArr2, k2)));
     }
 }

@@ -14,6 +14,15 @@ class Solution05_1 {
     }
 }
 
+class Solution05_1$2 {
+    public int[] solution(int[] num_list) {
+        int[] answer = Arrays.stream(num_list)
+                .sorted().limit(5).toArray();
+
+        return answer;
+    }
+}
+
 /**
  * codingtest5.PrgmTest05_1
  * 5-1. 기초 문제 - 뒤에서 5등까지
@@ -29,5 +38,9 @@ public class PrgmTest05_1 {
         int[] testArr = {12, 4, 15, 46, 38, 1, 14};
 
         System.out.println(Arrays.toString(new Solution05_1().solution(testArr)));
+
+        System.out.println("=".repeat(50));
+
+        System.out.println(Arrays.toString(new Solution05_1$2().solution(testArr)));
     }
 }

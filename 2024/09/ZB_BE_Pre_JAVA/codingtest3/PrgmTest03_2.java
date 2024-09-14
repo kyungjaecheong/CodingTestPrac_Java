@@ -26,6 +26,18 @@ class Solution03_2 {
     }
 }
 
+class Solution03_2$2 {
+    public String[] solution(String myStr) {
+        String[] splitArr = Arrays.stream(myStr.split("[abc]"))
+                .filter(str -> !str.isEmpty())
+                .toArray(String[]::new);
+
+        String[] answer = splitArr.length == 0 ? new String[] {"EMPTY"} : splitArr;
+
+        return answer;
+    }
+}
+
 /**
  * codingtest3.PrgmTest03_2
  * 3-2. 기초 문제 - 세 개의 구분자
@@ -51,5 +63,10 @@ public class PrgmTest03_2 {
         System.out.println(Arrays.toString(new Solution03_2().solution(testStr2)));
         System.out.println(Arrays.toString(new Solution03_2().solution(testStr3)));
 
+        System.out.println("=".repeat(50));
+
+        System.out.println(Arrays.toString(new Solution03_2$2().solution(testStr1)));
+        System.out.println(Arrays.toString(new Solution03_2$2().solution(testStr2)));
+        System.out.println(Arrays.toString(new Solution03_2$2().solution(testStr3)));
     }
 }

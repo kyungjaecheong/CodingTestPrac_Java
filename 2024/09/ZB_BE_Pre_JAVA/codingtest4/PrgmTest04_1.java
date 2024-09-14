@@ -23,6 +23,16 @@ class Solution04_1 {
     }
 }
 
+class Solution04_1$2 {
+    public int[] solution(int[] arr) {
+        int[] answer = Arrays.stream(arr)
+                .flatMap(i -> Arrays.stream(new int[i]).map(j -> i))
+                .toArray();
+
+        return answer;
+    }
+}
+
 /**
  * codingtest4.PrgmTest04_1
  * 4-1. 기초 문제 - 배열의 원소만큼 추가하기
@@ -44,5 +54,11 @@ public class PrgmTest04_1 {
         System.out.println(Arrays.toString(new Solution04_1().solution(testArr1)));
         System.out.println(Arrays.toString(new Solution04_1().solution(testArr2)));
         System.out.println(Arrays.toString(new Solution04_1().solution(testArr3)));
+
+        System.out.println("=".repeat(50));
+
+        System.out.println(Arrays.toString(new Solution04_1$2().solution(testArr1)));
+        System.out.println(Arrays.toString(new Solution04_1$2().solution(testArr2)));
+        System.out.println(Arrays.toString(new Solution04_1$2().solution(testArr3)));
     }
 }

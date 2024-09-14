@@ -18,6 +18,15 @@ class Solution01_2 {
     }
 }
 
+class Solution01_2$2 {
+    public String[] solution(String[] strArr) {
+        String[] answer = Arrays.stream(strArr)
+                .filter(strElement -> !strElement.contains("ad"))
+                .toArray(String[]::new);
+        return answer;
+    }
+}
+
 /**
  * codingtest1.PrgmTest01_2
  * 1-2. 기초 문제 - ad 제거하기
@@ -39,5 +48,13 @@ public class PrgmTest01_2 {
         String[] testInput2 = {"and","notad","abcd"};
         String[] result2 = new Solution01_2().solution(testInput2);
         System.out.println(Arrays.toString(result2));
+
+        System.out.println("=".repeat(50));
+
+        String[] result1$2 = new Solution01_2$2().solution(testInput1);
+        System.out.println(Arrays.toString(result1$2));
+
+        String[] result2$2 = new Solution01_2$2().solution(testInput2);
+        System.out.println(Arrays.toString(result2$2));
     }
 }
