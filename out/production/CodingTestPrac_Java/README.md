@@ -28,8 +28,8 @@
 - [x] [13-2. 기초 문제 - n보다 커질 때까지 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/181884)
 - [x] [14-1. 기초 문제 - A 강조하기](https://school.programmers.co.kr/learn/courses/30/lessons/181874)
 - [x] [14-2. 기초 문제 - 전국 대회 선발 고사](https://school.programmers.co.kr/learn/courses/30/lessons/181851)
-- [ ] [15-1. 기초 문제 - 꼬리 문자열](https://school.programmers.co.kr/learn/courses/30/lessons/181841)
-- [ ] [15-2. 기초 문제 - 날짜 비교하기](https://school.programmers.co.kr/learn/courses/30/lessons/181838)
+- [x] [15-1. 기초 문제 - 꼬리 문자열](https://school.programmers.co.kr/learn/courses/30/lessons/181841)
+- [x] [15-2. 기초 문제 - 날짜 비교하기](https://school.programmers.co.kr/learn/courses/30/lessons/181838)
 
 
 
