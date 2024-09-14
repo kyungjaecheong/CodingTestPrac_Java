@@ -44,7 +44,7 @@ class Solution08_2$2 {
 }
 
 /**
- * codingtest6.PrgmTest08_2
+ * codingtest8.PrgmTest08_2
  * 8-2. 기초 문제 - 마지막 두 원소
  * ---
  * 정수 리스트 num_list가 주어질 때,
