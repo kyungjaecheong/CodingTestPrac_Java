@@ -9,7 +9,8 @@ public class CodingTest04 {
     public static final double test2 = 69.32;
 
     public static void main(String[] args) {
-        System.out.println("=".repeat(50));
+        // System.out.println("=".repeat(50));
+        System.out.println("\n");
 
         System.out.println(new Solution04().solution(test1));
         System.out.println(new Solution04().solution(test2));

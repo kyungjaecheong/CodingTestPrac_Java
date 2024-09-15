@@ -10,7 +10,8 @@ public class CodingTest02 {
     public static final String testStr = "banana";
 
     public static void main(String[] args) {
-        System.out.println("=".repeat(50));
+        // System.out.println("=".repeat(50));
+        System.out.println("\n");
 
         System.out.println(new Solution02().solution(testStr, "ana"));
         System.out.println(new Solution02().solution(testStr, "nan"));

@@ -27,7 +27,8 @@ public class CodingTest06 {
             {"rabbit00", "111333"}};
 
     public static void main(String[] args) {
-        System.out.println("=".repeat(50));
+        // System.out.println("=".repeat(50));
+        System.out.println("\n");
 
         System.out.println(new Solution06().solution(id_pw1, db1));
         System.out.println(new Solution06().solution(id_pw2, db2));

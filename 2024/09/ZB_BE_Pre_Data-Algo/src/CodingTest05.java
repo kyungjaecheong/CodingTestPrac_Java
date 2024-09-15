@@ -12,7 +12,8 @@ public class CodingTest05 {
     public static final int test2 = 1081;
 
     public static void main(String[] args) {
-        System.out.println("=".repeat(50));
+        // System.out.println("=".repeat(50));
+        System.out.println("\n");
 
         System.out.println(new Solution05().solution(test1));
         System.out.println(new Solution05().solution(test2));

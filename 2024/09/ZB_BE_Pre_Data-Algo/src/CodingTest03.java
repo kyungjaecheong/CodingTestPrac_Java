@@ -10,7 +10,8 @@ public class CodingTest03 {
     public static final String testStr2 = "854020";
 
     public static void main(String[] args) {
-        System.out.println("=".repeat(50));
+        // System.out.println("=".repeat(50));
+        System.out.println("\n");
 
         System.out.println(new Solution03().solution(testStr1));
         System.out.println(new Solution03().solution(testStr2));

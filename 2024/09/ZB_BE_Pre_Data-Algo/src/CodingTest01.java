@@ -12,7 +12,8 @@ public class CodingTest01 {
     public static final String[] testArr3 = {"0", "0"};
 
     public static void main(String[] args) {
-        System.out.println("=".repeat(50));
+        // System.out.println("=".repeat(50));
+        System.out.println("\n");
 
         System.out.println(new Solution01().solution(testArr1[0], testArr1[1]));
         System.out.println(new Solution01().solution(testArr2[0], testArr2[1]));
