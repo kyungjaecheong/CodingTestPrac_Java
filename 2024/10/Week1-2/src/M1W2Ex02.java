@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-/**
+/*
  * 결제 금액 캐시백 계산 프로그램
  * - 수행 목적 : Scanner의 입력함수와 조건문을 통한 캐시백 계산 로직 작성
  *   - 직불카드로 결제를 하게되면 이에 대한 캐시백을 제공
@@ -10,6 +10,12 @@ import java.util.Scanner;
  *   - 캐시백포인트 단위는 백원단위
  *   - 한건의 캐시백 포인트는 최대 300원을 넘을 수 없음
  * - 결제 금액을 입력하면, 이에 대한 캐시백 계산 후 결과 출력
+ */
+
+/**
+ * ZeroBase BackEnd School<br>
+ * Java 미니과제 2번 - 결제 금액 캐시백 계산 프로그램
+ * @author 정경재 (30기)
  */
 public class M1W2Ex02 {
     public static void main(String[] args) {

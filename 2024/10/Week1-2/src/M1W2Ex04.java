@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
+/*
  * 주민등록번호 생성 프로그램
  * - Scanner의 입력함수와 조건문 및 Random클래스를 통한 주민번호 생성 로직 작성
  *    - 2020년도 부터 생성 조건이 변경되었습니다. (지역번호, 등록순서, 검증번호 -> 임의번호)
@@ -13,6 +13,12 @@ import java.util.Scanner;
  *   - 입력값은 생년, 월, 일, 성별과 임의의 번호를 통해서 생성
  *   - 임의번호는 Random함수의 nextInt()함수를 통해서 생성
  *     (임의 번호 범위는 1 ~ 999999사이의 값으로 설정)
+ */
+
+/**
+ * ZeroBase BackEnd School<br>
+ * Java 미니과제 4번 - 주민등록번호 생성 프로그램
+ * @author 정경재 (30기)
  */
 public class M1W2Ex04 {
     public static void main(String[] args) {
@@ -98,17 +104,6 @@ public class M1W2Ex04 {
         }
     }
 
-    private static String getGenderInput(Scanner sc) {
-        while (true) {
-            System.out.print("성별을 입력해 주세요. (m/f) : ");
-            String genderInput = sc.nextLine();
-            if (genderInput.matches("^[m|f]$")) {
-                return genderInput;
-            }
-            System.out.println("[입력 오류] 성별은 'm'(남성) 또는 'f'(여성) 으로 입력해 주세요.");
-        }
-    }
-
     private static String makeFrontId(int year, int month, int date) {
         try {
             LocalDate ld = LocalDate.of(year, month, date);
@@ -118,6 +113,17 @@ public class M1W2Ex04 {
         } catch (RuntimeException e) {
             System.out.println("[입력 오류] 잘못된 날짜 입니다. 다시 입력해 주세요.");
             return null;
+        }
+    }
+
+    private static String getGenderInput(Scanner sc) {
+        while (true) {
+            System.out.print("성별을 입력해 주세요. (m/f) : ");
+            String genderInput = sc.nextLine();
+            if (genderInput.matches("^[m|f]$")) {
+                return genderInput;
+            }
+            System.out.println("[입력 오류] 성별은 'm'(남성) 또는 'f'(여성) 으로 입력해 주세요.");
         }
     }
 }

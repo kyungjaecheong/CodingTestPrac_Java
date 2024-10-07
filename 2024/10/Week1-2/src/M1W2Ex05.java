@@ -1,12 +1,18 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 
-/**
+/*
  *  Scanner의 입력함수와 조건문 및 반복문을 통한 달력 계산 로직 작성
  *  - 입력받은 년도와 월을 통한 달력 생성
  *  - 입력값은 년도, 월을 입력
  *  - 날짜는 LocalDate클래스를 이용(Calendar와 Date클래스도 이용 가능)
  *  - 출력은 입력한 달을 기준으로 이전달, 입력달, 현재달 출력(3달 출력)
+ */
+
+/**
+ * ZeroBase BackEnd School<br>
+ * Java 미니과제 5번 - 달력 출력 프로그램
+ * @author 정경재 (30기)
  */
 public class M1W2Ex05 {
     public static void main(String[] args) {
@@ -28,6 +34,35 @@ public class M1W2Ex05 {
             System.out.println("[Exception 발생] : " + e);
         } finally {
             System.out.println("프로그램을 종료 합니다.");
+        }
+    }
+
+    private static int getYearInput(Scanner sc) {
+        while (true) {
+            System.out.print("달력의 년도를 입력해 주세요.(yyyy) : ");
+            String yearInput = sc.nextLine();
+            if (yearInput.matches("^[0-9]{4}$")) {
+                int year = Integer.parseInt(yearInput);
+                if (year >= 1000 + 1 && year <= 9999 - 1) {
+                    return year;
+                }
+            }
+            // 3개 달을 출력하기 위한 조건 검사
+            System.out.println("[입력 오류] 달력 년도는 1001 ~ 9998 사이로 입력해 주세요.");
+        }
+    }
+
+    private static int getMonthInput(Scanner sc) {
+        while (true) {
+            System.out.print("달력의 월을 입력해 주세요.(mm) : ");
+            String monthInput = sc.nextLine();
+            if (monthInput.matches("^[0-9]{1,2}$")) {
+                int month = Integer.parseInt(monthInput);
+                if (month >= 1 && month <= 12) {
+                    return month;
+                }
+            }
+            System.out.println("[입력 오류] 달력 월은 1 ~ 12 사이로 입력해 주세요.");
         }
     }
 
@@ -77,35 +112,6 @@ public class M1W2Ex05 {
                 }
             }
             System.out.println();
-        }
-    }
-
-    private static int getYearInput(Scanner sc) {
-        while (true) {
-            System.out.print("달력의 년도를 입력해 주세요.(yyyy) : ");
-            String yearInput = sc.nextLine();
-            if (yearInput.matches("^[0-9]{4}$")) {
-                int year = Integer.parseInt(yearInput);
-                if (year >= 1000 + 1 && year <= 9999 - 1) {
-                    return year;
-                }
-            }
-            // 3개 달을 출력하기 위한 조건 검사
-            System.out.println("[입력 오류] 달력 년도는 1001 ~ 9998 사이로 입력해 주세요.");
-        }
-    }
-
-    private static int getMonthInput(Scanner sc) {
-        while (true) {
-            System.out.print("달력의 월을 입력해 주세요.(mm) : ");
-            String monthInput = sc.nextLine();
-            if (monthInput.matches("^[0-9]{1,2}$")) {
-                int month = Integer.parseInt(monthInput);
-                if (month >= 1 && month <= 12) {
-                    return month;
-                }
-            }
-            System.out.println("[입력 오류] 달력 월은 1 ~ 12 사이로 입력해 주세요.");
         }
     }
 }

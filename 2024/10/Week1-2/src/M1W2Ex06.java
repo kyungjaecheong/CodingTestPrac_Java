@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
+/*
  * 가상 선거 및 당선 시뮬레이션 프로그램
  * - 조건문 및 반복문과 배열(or 컬렉션)을 통한 당선 시뮬레이션 로직 작성
  * - 선거를 미리 시뮬레이션을 통해서 진행하는 프로그램
@@ -21,6 +21,12 @@ import java.util.Scanner;
  *   - 후보자 인원은 2 ~ 10 사이의 값을 입력받으면, 그외 값 입력에 대한 예외는 없다고 가정
  *   - 후보자이름은 한글로 입력하며, 10자 미만으로 입력함. (역시, 그외 입력에 대한 예외는 없다)
  */
+
+/**
+ * ZeroBase BackEnd School<br>
+ * Java 미니과제 6번 - 가상 선거 및 당선 시뮬레이션 프로그램
+ * @author 정경재 (30기)
+ */
 public class M1W2Ex06 {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
@@ -36,46 +42,6 @@ public class M1W2Ex06 {
         } finally {
             System.out.println("\n프로그램을 종료합니다.");
         }
-    }
-
-    private static void showVoting(
-            int population,
-            Map<Integer, String> candidateMap
-    ) {
-        Random random = new Random();
-        Map<Integer, Integer> votesMap = new LinkedHashMap<>();
-        int candidates = candidateMap.size();
-        for (int i = 1; i <= candidates; i++) {
-            votesMap.put(i, 0);
-        }
-
-        for (int p = 1; p <= population; p++) {
-            int vote = random.nextInt(candidates) + 1;
-
-            votesMap.put(vote, votesMap.get(vote) + 1);
-
-            double totalRatio = (double) p / population * 100;
-            System.out.printf("\n[투표진행률]: %.2f%%, %d명투표 => %s\n",
-                    totalRatio, p, candidateMap.get(vote));
-            for (int i = 1; i <= candidates; i++) {
-                String name = candidateMap.get(i);
-                int candiVotes = votesMap.get(i);
-                double candiRatio = (double) candiVotes / population * 100;
-                System.out.printf("[기호:%d] %s:\t%3.2f%%\t(투표수: %d)\n",
-                        i, name, candiRatio, candiVotes);
-            }
-        }
-        int resultIdx = 0;
-        int resultVotes = 0;
-        for (Map.Entry<Integer, Integer> entry : votesMap.entrySet()) {
-            Integer key = entry.getKey();
-            Integer votes = entry.getValue();
-            if (votes > resultVotes) {
-                resultIdx = key;
-                resultVotes = votes;
-            }
-        }
-        System.out.println("\n[투표결과] 당선인 : " + candidateMap.get(resultIdx));
     }
 
     private static int getPopulation(Scanner sc) {
@@ -130,5 +96,45 @@ public class M1W2Ex06 {
             }
 
         }
+    }
+
+    private static void showVoting(
+            int population,
+            Map<Integer, String> candidateMap
+    ) {
+        Random random = new Random();
+        Map<Integer, Integer> votesMap = new LinkedHashMap<>();
+        int candidates = candidateMap.size();
+        for (int i = 1; i <= candidates; i++) {
+            votesMap.put(i, 0);
+        }
+
+        for (int p = 1; p <= population; p++) {
+            int vote = random.nextInt(candidates) + 1;
+
+            votesMap.put(vote, votesMap.get(vote) + 1);
+
+            double totalRatio = (double) p / population * 100;
+            System.out.printf("\n[투표진행률]: %.2f%%, %d명투표 => %s\n",
+                    totalRatio, p, candidateMap.get(vote));
+            for (int i = 1; i <= candidates; i++) {
+                String name = candidateMap.get(i);
+                int candiVotes = votesMap.get(i);
+                double candiRatio = (double) candiVotes / population * 100;
+                System.out.printf("[기호:%d] %s:\t%3.2f%%\t(투표수: %d)\n",
+                        i, name, candiRatio, candiVotes);
+            }
+        }
+        int resultIdx = 0;
+        int resultVotes = 0;
+        for (Map.Entry<Integer, Integer> entry : votesMap.entrySet()) {
+            Integer key = entry.getKey();
+            Integer votes = entry.getValue();
+            if (votes > resultVotes) {
+                resultIdx = key;
+                resultVotes = votes;
+            }
+        }
+        System.out.println("\n[투표결과] 당선인 : " + candidateMap.get(resultIdx));
     }
 }

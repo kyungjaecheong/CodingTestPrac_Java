@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-/**
+/*
  * 놀이동산 입장권 계산 프로그램
  * - 수행 목적 : Scanner의 입력함수와 다중 조건문을 통한 입장권 계산 로직 작성
  * - 놀이공원 입장료를 구하는 조건에 맞게 로직 작성
@@ -12,6 +12,12 @@ import java.util.Scanner;
  *   - 복지카드와 국가유공자의 경우 일반 할인 적용
  *   - 13세미만이면 특별 할인 적용
  *   - 17시이후에 입장하면 특별 할인 적용
+ */
+
+/**
+ * ZeroBase BackEnd School<br>
+ * Java 미니과제 3번 - 놀이동산 입장권 계산 프로그램
+ * @author 정경재 (30기)
  */
 public class M1W2Ex03 {
     public static void main(String[] args) {
@@ -79,6 +85,19 @@ public class M1W2Ex03 {
         }
     }
 
+    private enum Ticket {
+        FREE(0),
+        SPECIAL(4000),
+        NORMAL(8000),
+        BASIC(10000);
+
+        final int price;
+
+        Ticket(int price) {
+            this.price = price;
+        }
+    }
+
     private static Ticket getTicketPrice(
             int age,
             int hour,
@@ -98,18 +117,5 @@ public class M1W2Ex03 {
         }
 
         return Ticket.BASIC;
-    }
-
-    private enum Ticket {
-        FREE(0),
-        SPECIAL(4000),
-        NORMAL(8000),
-        BASIC(10000);
-
-        final int price;
-
-        Ticket(int price) {
-            this.price = price;
-        }
     }
 }
