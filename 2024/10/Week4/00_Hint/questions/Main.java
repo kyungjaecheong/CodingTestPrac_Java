@@ -13,16 +13,13 @@ public class Main {
     }
     for (int i = 0; i < biNums.length-1; i++) {
       for (int j = i+1; j < biNums.length; j++) {
-        //String s = Integer.toString(Integer.parseInt(biNums[i]) + Integer.parseInt(biNums[j]));
         /* 비활성
-          int sum = Integer.parseInt(biNums[i], 2) + Integer.parseInt(biNums[j], 2);
-        String s = Integer.toBinaryString(sum);
+        String s = Long.toString(Long.parseLong(biNums[i]) + Long.parseLong(biNums[j]));
         s = s.replace("2", "0");
         result+= Integer.parseInt(s,2);
-        int xorValue = Integer.parseInt(biNums[i],2) ^ Integer.parseInt(biNums[j], 2);
-        result += xorValue;
+          int sum = Integer.parseInt(biNums[i], 2) + Integer.parseInt(biNums[j], 2);
+        String s = Integer.toBinaryString(sum);
         result += xorByBits(biNums[i], biNums[j]);
-         */
         String a = biNums[i];
         String b = biNums[j];
         int maxLength = Math.max(a.length(), b.length());
@@ -38,6 +35,9 @@ public class Main {
           xorResult.append((bitA == bitB) ? '0' : '1');
         }
         result += Integer.parseInt(xorResult.toString(), 2);
+         */
+        int xorValue = Integer.parseInt(biNums[i],2) ^ Integer.parseInt(biNums[j], 2);
+        result += xorValue;
       }
     }
     System.out.println(result);
